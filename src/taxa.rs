@@ -35,12 +35,13 @@ pub struct NcbiTaxEntry {
 #[doc(hidden)]
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub(crate) struct Entry {
-    pub cluster: Cluster,
+    pub taxonomy: Taxonomy,
 }
 
 // Helper to parse the MIBiG json
 #[doc(hidden)]
 #[derive(Debug, Clone, Deserialize, Serialize)]
-pub(crate) struct Cluster {
-    pub ncbi_tax_id: String,
+pub(crate) struct Taxonomy {
+    #[serde(rename = "ncbiTaxId")]
+    pub ncbi_tax_id: i64,
 }

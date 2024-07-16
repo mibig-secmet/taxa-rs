@@ -79,9 +79,7 @@ impl TaxonCache {
         for path in entries {
             let content = fs::read_to_string(&path)?;
             let entry: Entry = serde_json::from_str(&content)?;
-            if let Ok(taxid) = entry.cluster.ncbi_tax_id.parse::<i64>() {
-                taxids.insert(taxid);
-            }
+            taxids.insert(entry.taxonomy.ncbi_tax_id);
         }
         Ok(taxids)
     }
