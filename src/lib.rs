@@ -30,9 +30,9 @@
 //! let mergeddump = PathBuf::from("path/to/merged.dmp");
 //! let datadir = PathBuf::from("path/to/mibig/jsons/");
 //!
-//! let mut taxon_cache = TaxonCache::new(cachefile);
+//! let mut taxon_cache = TaxonCache::new();
 //! taxon_cache.initialise_from_paths(taxdump, mergeddump, datadir)?;
-//! taxon_cache.save_path(cachefile)?;
+//! taxon_cache.save_path(&cachefile)?;
 //! #
 //! #     Ok(())
 //! # }
